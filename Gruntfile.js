@@ -164,7 +164,8 @@ module.exports = function(grunt) {
     grunt.registerTask('dev-test', ['env:test', 'clean:coverage', 'copy:resourcesForInstrumented', 'instrument', 'mochaTest:server-side-spec']);
     grunt.registerTask('dev-test-cov', ['env:test', 'clean:coverage', 'copy:resourcesForInstrumented', 'instrument', 'mochaTest:server-side', 'storeCoverage', 'makeReport']);
     grunt.registerTask('dev-fvtspec', ['env:test', 'clean:coverage', 'mochaTest:fvt-spec']);
-    grunt.registerTask('dev-fvt', ['env:test', 'clean:coverage', 'mochaTest:fvt']);
+    //grunt.registerTask('dev-fvt', ['env:test', 'clean:coverage', 'mochaTest:fvt']);
+    grunt.registerTask('dev-fvt', [clean:coverage', 'mochaTest:fvt']);
     grunt.registerTask('test_real', ['env:chrome', 'simplemocha:sauce:' + _(desireds).keys().first()]);
     grunt.registerTask('test_fake', ['env:chrome', 'simplemocha:sauce_node:' + _(desireds).keys().first()]);
 };
